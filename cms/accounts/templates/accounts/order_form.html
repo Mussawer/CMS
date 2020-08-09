@@ -4,18 +4,22 @@
 
 
 <div class="row">
-	<div class="col-md-6">
-		<div class="card card-body">
+    <div class="col-md-6">
+        <div class="card card-body">
 
-			<form action="" method="POST">
-				{% csrf_token %}
-				{{form}}
-				
-				<input type="submit" name="Submit">
-			</form>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.management_form }}
+                {% for field in form %}
+                    {{field}}
+                <hr>
+                {% endfor %}
 
-		</div>
-	</div>
+                <input type="submit" name="Submit">
+            </form>
+
+        </div>
+    </div>
 </div>
 
 
